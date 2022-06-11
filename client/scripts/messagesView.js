@@ -11,12 +11,20 @@ var MessagesView = {
     MessagesView.render();
   },
 
-  render: function() {
+  render: function(data) {
     // TODO: Render _all_ the messages.
+    // For loop
+    console.log(window.Messages._data);
+    for (var key in _data) {
+      console.log('hi');
+      MessagesView.renderMessage(data[key]);
+    }
+    //MessagesView.renderMessage(window.Messages.data['62806']);
   },
 
   renderMessage: function(message) {
     // TODO: Render a single message.
+    MessagesView.$chats.append(`<p>${message}</p>`);
   },
 
   handleClick: function(event) {

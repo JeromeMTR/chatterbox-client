@@ -18,3 +18,4 @@ var Messages = {
     }
   }
 };
+console.log(Messages._data);

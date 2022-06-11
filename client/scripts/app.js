@@ -33,6 +33,7 @@ var App = {
       console.log(data);
       Messages.retrieve(data);
       Rooms.addRoom(data);
+      MessagesView.render(data);
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
     });
