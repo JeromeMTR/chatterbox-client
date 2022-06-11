@@ -5,9 +5,17 @@
 var Messages = {
 
   // TODO: Define how you want to store your messages.
-  _data: null,
+  _data: {},
 
   // TODO: Define methods which allow you to retrieve from,
   // add to, and generally interact with the messages.
+  add: function() {
 
+  },
+  retrieve: function(data) {
+    for (let i = 0; i < data.length; i++) {
+      Messages._data[data[i].message_id] = data[i].text;
+    }
+  }
 };
+console.log(Messages._data);

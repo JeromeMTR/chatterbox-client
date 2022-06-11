@@ -16,13 +16,19 @@ var FormView = {
 
     // TODO: Currently, this is all handleSubmit does.
     // Make this function actually send a message to the Parse API.
-  
+    var temp = {};
+    temp['username'] = App.username;
+    temp['text'] = $('#message').val();
+    temp.roomname = 'lobby';
+    Parse.create(temp);
+
     console.log('click!');
+    $('#message').val('');
   },
 
   setStatus: function(active) {
     var status = active ? 'true' : null;
-    FormView.$form.find('input[type=submit]').attr('disabled', status);
+    FormView.$form.find('input[type=submit]').attr('active', status);
   }
 
 };
