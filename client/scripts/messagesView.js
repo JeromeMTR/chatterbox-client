@@ -14,10 +14,8 @@ var MessagesView = {
   render: function(data) {
     // TODO: Render _all_ the messages.
     // For loop
-    console.log(window.Messages._data);
-    for (var key in _data) {
-      console.log('hi');
-      MessagesView.renderMessage(data[key]);
+    for (var key in data) {
+      MessagesView.renderMessage(data[key].text);
     }
     //MessagesView.renderMessage(window.Messages.data['62806']);
   },
