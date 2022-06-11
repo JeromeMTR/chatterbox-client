@@ -8,23 +8,24 @@ var MessagesView = {
   initialize: function() {
     // TODO: Perform any work which needs to be done
     // when this view loads.
-    MessagesView.render();
+    // MessagesView.render();
   },
 
   render: function(data) {
     // TODO: Render _all_ the messages.
     // For loop
     for (var key in data) {
-      console.log(data);
-      var combined = data[key].username + ' : ' + data[key].text;
-      MessagesView.renderMessage(combined);
+      MessagesView.$chats.append(`<p class="username">${data[key].username} :</p>`);
+      $('.username').on('click', Friends.toggle(data[key].username));
+      $('.username').css('font-weight', 'Bold');
+      MessagesView.renderMessage(data[key].text);
     }
-    //MessagesView.renderMessage(window.Messages.data['62806']);
   },
 
-  renderMessage: function(message) {
+  renderMessage: function(text) {
     // TODO: Render a single message.
-    MessagesView.$chats.append(`<p class="message">${message}</p>`);
+    MessagesView.$chats.append(`<p class="message">${text}</p>`);
+
   },
 
   handleClick: function(event) {

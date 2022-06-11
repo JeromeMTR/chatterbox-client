@@ -10,7 +10,6 @@ var App = {
 
   initialize: function() {
     App.username = window.location.search.substr(10);
-
     FormView.initialize();
     RoomsView.initialize();
     MessagesView.initialize();
@@ -18,12 +17,10 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
-
     // TODO: Make sure the app loads data from the API
     // continually, instead of just once at the start.
-
     // setTimeout(function() {
-    //   App.fetch();
+    //   App.initialize();
     // }, 5000);
   },
 
