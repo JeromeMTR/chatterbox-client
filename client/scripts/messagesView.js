@@ -13,7 +13,6 @@ var MessagesView = {
 
   render: function() {
     // TODO: Render _all_ the messages.
-    Messages._data
   },
 
   renderMessage: function(message) {

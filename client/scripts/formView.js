@@ -21,8 +21,6 @@ var FormView = {
     temp['text'] = $('#message').val();
     temp.roomname = 'lobby';
     Parse.create(temp);
-
-    console.log('click!');
     $('#message').val('');
   },
 
