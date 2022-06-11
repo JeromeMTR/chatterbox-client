@@ -15,14 +15,16 @@ var MessagesView = {
     // TODO: Render _all_ the messages.
     // For loop
     for (var key in data) {
-      MessagesView.renderMessage(data[key].text);
+      console.log(data);
+      var combined = data[key].username + ' : ' + data[key].text;
+      MessagesView.renderMessage(combined);
     }
     //MessagesView.renderMessage(window.Messages.data['62806']);
   },
 
   renderMessage: function(message) {
     // TODO: Render a single message.
-    MessagesView.$chats.append(`<p>${message}</p>`);
+    MessagesView.$chats.append(`<p class="message">${message}</p>`);
   },
 
   handleClick: function(event) {

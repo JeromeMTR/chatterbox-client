@@ -9,17 +9,24 @@ var Rooms = {
 
   // TODO: Define methods which allow you to add rooms, update the list,
   // mark a room as selected, etc.
-  addRoom: function(data) {
+  roomList: function(data) {
     for (let i = 0; i < data.length; i++) {
-      Rooms._data[data[i].roomname] = data[i].roomname;
+      if (Rooms._data[data[i].roomname] === undefined) {
+        Rooms._data[data[i].roomname] = data[i].roomname;
+      }
+      if (Rooms._data[data[i].roomname] === null || Rooms._data[data[i].roomname].trim().length === 0) {
+        Rooms._data['lobby'] = 'lobby';
+      }
     }
   },
 
-  updateRoom: function(room) {
-    Rooms._data[room] = room;
-  },
+  // updateList: function() {
+  //   for (let i = 0; i < Rooms._data.length; i++) {
+  //     $('#rooms select').append(`<p>${Rooms._data[i]}</p>`);
+  //   }
+  // },
 
-  selectRoom: function() {
-
+  add: function(newRoom) {
+    Rooms._data[newRoom] = newRoom;
   }
 };

@@ -22,9 +22,9 @@ var App = {
     // TODO: Make sure the app loads data from the API
     // continually, instead of just once at the start.
 
-    setTimeout(function() {
-      App.fetch();
-    }, 5000);
+    // setTimeout(function() {
+    //   App.fetch();
+    // }, 5000);
   },
 
   fetch: function(callback = ()=>{}) {
@@ -32,10 +32,12 @@ var App = {
       // examine the response from the server request:
       console.log(data);
       Messages.retrieve(data);
-      Rooms.addRoom(data);
       MessagesView.render(data);
+      Rooms.roomList(data);
+      RoomsView.render(data);
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
+
     });
   },
 

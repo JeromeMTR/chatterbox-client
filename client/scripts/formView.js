@@ -19,7 +19,7 @@ var FormView = {
     var temp = {};
     temp['username'] = App.username;
     temp['text'] = $('#message').val();
-    temp['roomname'] = $('#rooms ').val();
+    temp['roomname'] = $('select option:selected').text();
     Parse.create(temp);
     $('#message').val('');
   },
